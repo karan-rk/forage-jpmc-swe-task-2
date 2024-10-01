@@ -1,10 +1,9 @@
 export interface Order {
-  price: Number,
-  size: Number,
+  price: number,
+  size: number,
 }
 /**
  * The datafeed server returns an array of ServerRespond with 2 stocks.
- * We do not have to manipulate the ServerRespond for the purpose of this task.
  */
 export interface ServerRespond {
   stock: string,
@@ -14,7 +13,7 @@ export interface ServerRespond {
 }
 
 class DataStreamer {
-  // The url where datafeed server is listening
+  // The url where the datafeed server is listening
   static API_URL: string = 'http://localhost:8080/query?id=1';
 
   /**
@@ -29,7 +28,7 @@ class DataStreamer {
       if (request.status === 200) {
         callback(JSON.parse(request.responseText));
       } else {
-        alert ('Request failed');
+        alert('Request failed');
       }
     }
 
